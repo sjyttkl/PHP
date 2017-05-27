@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<lessions>
+ <lession name='数据库'>
+   <teacher>小冬</teacher>
+   <stu_number>45</stu_number>
+   <ave_mark>85</ave_mark>
+ </lession>
+ 
+  <lession name="语文">
+   <teacher>晏姝</teacher>
+   <stu_number>65</stu_number>
+   <ave_mark>92</ave_mark>
+ </lession>
+
+</lessions>

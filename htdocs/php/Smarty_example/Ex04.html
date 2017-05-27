@@ -1,0 +1,79 @@
+
+
+{config_load file="boy.conf" section="girl"}
+<html>
+<head>
+	<meta http-equiv="Content-type"; content="text/html"; charset="utf-8"/>
+	<title>第四个Smarty程序</title>
+	
+	
+</head>
+<body>
+   
+
+	{include file="head.html" menu1="菜单1" menu2="菜单2" menu3="菜单3" menu4="菜单4"}
+	
+	
+	<br/>
+	<h4>include_php的使用</h4>
+	<div id="nav">
+	<ul>
+		<li>首页</li>
+		<li>{$menu11}</li>
+		<li>{$menu22}</li>
+		<li>{$menu33}</li>
+		<li>{$menu44}</li>
+		<li>{$menu55}</li>
+			
+	
+	</ul>
+</div>
+
+{ldelim}php文件{rdelim}
+
+<br/>
+
+<table border="1">
+    <tr>
+	  <td>配置文件smarty.conf ---- ##用法</td>
+	  
+	</tr>
+	<tr>
+	  <td>姓名</td>
+	  <td>{#name#}</td>
+	</tr>
+	<tr>
+	  <td>年龄</td>
+	  <td>{#age#}</td>
+	</tr>
+	<tr>
+	  <td>兴趣爱好</td>
+	  <td>{#hobby#}</td>
+	</tr>
+
+</table>
+
+<br/>
+
+<table border="1">
+    <tr>
+	  <td>配置文件smarty.conf ---- $smarty.config用法</td>
+	  
+	</tr>
+	<tr>
+	  <td>姓名</td>
+	  <td>{$smarty.config.name}</td>
+	</tr>
+	<tr>
+	  <td>年龄</td>
+	  <td>{$smarty.config.age}</td>
+	</tr>
+	<tr>
+	  <td>兴趣爱好</td>
+	  <td>{$smarty.config.hobby}</td>
+	</tr>
+
+</table>
+</body>
+
+</html>

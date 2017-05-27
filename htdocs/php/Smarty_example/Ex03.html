@@ -1,0 +1,107 @@
+<html>
+<head>
+	<meta http-equiv="Content-type"; content="text/html"; charset="utf-8"/>
+	<title>第三个Smarty程序</title>
+</head>
+<body>
+	<table border="1">
+	   <tr>
+		<td width="100" >当前时间戳</td>
+		<td width="150" >{$smarty.now|date_format:"%Y-%m-%d %H:%M:%S"}</td>
+	   </tr>
+	   <tr>
+		<td >主机名</td>
+		<td  >{$smarty.server.SERVER_NAME} </td>
+	   </tr>
+	   <tr>
+		<td >PHP版本</td>
+		<td>{$smarty.const.PHP_VERSION}</td>
+	   </tr>
+	   
+	   <tr>		
+		<td>模板文件</td>
+		<td>{$smarty.template}</td>
+	   </tr>
+	  
+	</table>
+	
+	<br></br><h4>遍历枚举数组（字符串索引数组）</h4><br></br>
+	{if $week==1}
+	     今天 是 周一
+	{elseif $week==2}
+	    今天 是 周二
+	{elseif $week==3}
+	   今天 是 周三
+	{elseif $week==4}
+	   今天 是 周四
+	{elseif $week==5}
+	   今天 是 周五
+	{elseif $week==6}
+	   今天 是 周六
+	{else}
+	    今天 是 周日
+	{/if}
+	<br></br><br></br>
+	<table border='1'> 
+		{foreach from= $for_each1 item=info}
+		<tr>
+		<td>{$info}</td>	
+		{/foreach}
+		</tr>
+	
+	</table>
+	
+	
+
+	
+	<br></br><h4>遍历枚举数组（字符串索引数组）</h4><br></br>
+	<table border='1'> 
+		{foreach from= $for_each2 key=key item=info2}
+		<tr>
+		<td>{$key}</td>	
+		<td>{$info2}</td>	
+		{/foreach}
+		</tr>
+	
+	</table>
+	
+	<br></br><h4>遍嵌套遍历多维数组--foreach</h4><br></br>
+	
+	
+	<table border='1'> 
+	    <tr>
+		   遍嵌套遍历多维数组--foreach
+		</tr>
+		{foreach from= $programs  item=program}
+		<tr>
+		{foreach from=$program  item=program_info }
+		<td>{$program_info}</td>	
+		{/foreach}
+		
+		</tr>
+	{/foreach}
+	</table>
+	
+	
+	<br></br><h4>遍嵌套遍历多维数组----section</h4><br></br>
+	<table border='1'> 
+	
+		{section name=i loop=$programs start=0 step=2 }
+		<tr>
+		   <td>{$programs[i].weekday}</td>
+		   <td>{$programs[i].program}</td>
+		
+		</tr>
+	    {/section}
+	</table>
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+
+</html>
